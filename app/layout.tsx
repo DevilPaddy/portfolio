@@ -1,15 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter_Tight, Instrument_Serif } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/navbar/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const instrumentSerif = Instrument_Serif({
+  variable: "--font-instrument-serif",
   subsets: ["latin"],
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -23,10 +26,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${interTight.variable} ${instrumentSerif.variable}`}>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${interTight.variable} ${instrumentSerif.variable} antialiased`}
       >
+        <div className="fixed top-0 left-0 w-screen z-20">
+          <Navbar />
+        </div>
         {children}
       </body>
     </html>

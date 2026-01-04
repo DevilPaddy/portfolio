@@ -2,19 +2,19 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #040613;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter-tight);
+  --font-serif: var(--font-instrument-serif);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #040613;
     --foreground: #ededed;
   }
 }
@@ -22,5 +22,110 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-serif);
+}
+
+a {
+  font-family: var(--font-serif);
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background: hsla(246, 100%, 57%, 1);
+  background: radial-gradient(circle, rgba(58, 36, 255, 1) 0%, hsla(254, 100%, 59%, 0.2) 0%, hsla(228, 65%, 5%, 1) 100%);
+  background: -moz-radial-gradient(circle, hsla(246, 100%, 57%, 1) 0%, hsla(254, 100%, 59%, 0.2) 0%, hsla(228, 65%, 5%, 1) 100%);
+  background: -webkit-radial-gradient(circle, hsla(246, 100%, 57%, 1) 0%, hsla(254, 100%, 59%, 0.2) 0%, hsla(228, 65%, 5%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient(startColorstr="#3822FF", endColorstr="#5E2DFF", GradientType=1);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center,
+      #5E2DFF,
+      transparent 0%);
+  filter: blur(120px);
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center,
+      transparent 25%,
+      rgba(0, 0, 0, 0.65) 75%,
+      rgba(0, 0, 0, 0.95) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  isolation: isolate;
+  text-align: center;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: 3.6em;
+  font-style: italic;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+  filter: contrast(1.1);
+  opacity: 1;
+}
+
+.hero-para{
+  width: 60%;
+  font-size: clamp(1em, 2vw + .1rem, 1.2em);
+  text-align: center;
+  line-height: 1.1em;
+  color: #ffffffb1;
+}
+
+.contact-btn{
+  margin-top: 2em;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 12px 32px;
+  border: 1px solid #7632ff82;
+  border-radius: 1000px;
+  font-size: 1.2em;
+  font-style: italic;
+  color: #ffffffb1;
+  transition: background-color .3s ease-in-out;
+}
+
+.contact-btn:hover{
+  background: #7632ff39;
+}
+
