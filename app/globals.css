@@ -95,15 +95,17 @@ a {
 .hero-title {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: 3.6em;
+  font-size: clamp(1.4em, 2vw + 3rem, 3.5rem);
   font-style: italic;
   color: #ffffff;
   letter-spacing: -0.01em;
   filter: contrast(1.1);
   opacity: 1;
+  line-height: 1em;
 }
 
-.hero-para{
+
+.hero-para {
   width: 60%;
   font-size: clamp(1em, 2vw + .1rem, 1.2em);
   text-align: center;
@@ -111,7 +113,7 @@ a {
   color: #ffffffb1;
 }
 
-.contact-btn{
+.contact-btn {
   margin-top: 2em;
   display: flex;
   align-items: center;
@@ -125,7 +127,19 @@ a {
   transition: background-color .3s ease-in-out;
 }
 
-.contact-btn:hover{
-  background: #7632ff39;
+.contact-btn:hover {
+  background: #7632ff0e;
 }
 
+@media (max-width: 888px) {
+  .hero-para {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: clamp(1.3em, 1em + 1.74rem, 2.4rem);
+  }
+
+}

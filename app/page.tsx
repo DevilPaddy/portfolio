@@ -4,7 +4,7 @@ import { HiArrowLongRight } from "react-icons/hi2";
 export default function App() {
 
   return (
-    <section className="hero">
+    <section className="hero py-4 px-4 md:px-18">
       <div className="hero-content">
         <div className="hero-title">
           <h2>Building Digital Experiences That Matter</h2>
@@ -19,6 +19,8 @@ export default function App() {
         >Get In Touch <HiArrowLongRight size={28} />
         </Link>
       </div>
+
+
     </section>
 
   )

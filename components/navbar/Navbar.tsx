@@ -17,7 +17,7 @@ export default function Navbar() {
         <nav className="relative">
             <div className="py-4 px-4 md:px-18 flex items-center justify-between">
                 <div className="logo">
-                    <h1>Anuj Belsare</h1>
+                    <Link href={'/'}>Anuj Belsare</Link>
                 </div>
 
                 <div className="menu-btn">
@@ -31,7 +31,7 @@ export default function Navbar() {
                 <div className="menu absolute top-0 left-0 py-4 px-4 md:px-18">
                     <div className="flex items-center justify-between">
                         <div className="logo">
-                            <h1>Anuj Belsare</h1>
+                            <Link href={'/'} onClick={closeMenu}>Anuj Belsare</Link>
                         </div>
 
                         <div className="menu-btn">
@@ -43,21 +43,25 @@ export default function Navbar() {
 
                     <div className="flex flex-col items-end justify-start">
                         <Link
+                            className='menua'
                             onClick={closeMenu}
                             href={'/'}
                         >HOME
                         </Link>
                         <Link
+                            className='menua'
                             onClick={closeMenu}
                             href={'/'}
                         >SKILLS
                         </Link>
                         <Link
+                            className='menua'
                             onClick={closeMenu}
                             href={'/'}
                         >PROJECTS
                         </Link>
                         <Link
+                            className='menua'
                             onClick={closeMenu}
                             href={'/'}
                         >CONTACT ME
