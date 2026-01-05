@@ -1,0 +1,27 @@
+.bgclass {
+    position: relative;
+}
+
+.glow-div {
+    width: 12vw;
+    height: 12vw;
+    border-radius: 100%;
+    background: #3512a896;
+    z-index: 1;
+    filter: blur(140px);
+}
+
+.div1 {
+    position: absolute;
+    top: 10%;
+    left: -12%;
+    box-shadow: 14px 160px 200px 200px #3512a872;
+}
+
+.div2 {
+    position: absolute;
+    bottom: 0;
+    right: -12%;
+    box-shadow: -14px -160px 200px 200px #3512a872;
+}
+

@@ -33,7 +33,9 @@ export default function RootLayout({
         <div className="fixed top-0 left-0 w-screen z-20">
           <Navbar />
         </div>
-        {children}
+        <div className="mx-auto">
+          {children}
+        </div>
       </body>
     </html>
   );
